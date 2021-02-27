@@ -1,0 +1,9 @@
+- setup db connections requires choice of cloud service
+
+- setup authentication (possibly use just origin auth?)
+
+- setup and import dummy data (json)
+
+- Add in comments and documentation for how to work on the server
+
+- Add password encryption

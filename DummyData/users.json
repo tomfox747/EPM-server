@@ -1,0 +1,18 @@
+{"users":[
+    {
+        "userName":"tomfox747",
+        "password":"qwerty",
+        "email":"17661465@students.lincoln.ac.uk",
+        "permissions":[
+            0,1,2,3,4
+        ]
+    },
+    {
+        "userName":"jamesSmith",
+        "password":"asdfg",
+        "email":"00000000@students.lincoln.ac.uk",
+        "permissions":[
+            0,1
+        ]
+    }
+]}

@@ -1,0 +1,8 @@
+{"level":"error","message":"{\"route\":\"/user/authenticate\",\"errorMessage\":\"Cannot read property 'userName' of undefined\",\"errorCode\":\"route call\"}"}
+{"level":"error","message":"{\"route\":\"/user/authenticate\",\"errorMessage\":\"Cannot read property 'userName' of undefined\",\"errorCode\":\"route call\"}"}
+{"level":"error","message":"{\"route\":\"/user/authenticate\",\"errorMessage\":\"Cannot read property 'userName' of undefined\",\"errorCode\":\"route call\"}"}
+{"level":"error","message":"{\"route\":\"/user/authenticate\",\"errorMessage\":\"Cannot read property 'userName' of undefined\",\"errorCode\":\"route call\"}"}
+{"level":"error","message":"{\"route\":\"/user/authenticate\",\"errorMessage\":\"Cannot read property 'userName' of undefined\",\"errorCode\":\"route call\"}"}
+{"level":"error","message":"{\"route\":\"/user/authenticate\",\"errorMessage\":\"Error: TypeError: Cannot read property 'data' of undefined\",\"errorCode\":\"route call\",\"function\":\"{\\\"userName\\\":\\\"tom\\\",\\\"password\\\":\\\"qwerty\\\"}\"}"}
+{"level":"error","message":"{\"route\":\"/user/authenticate\",\"errorMessage\":\"Error: TypeError: Cannot read property 'data' of undefined\",\"errorCode\":\"route call\",\"function\":\"{\\\"userName\\\":\\\"tom\\\",\\\"password\\\":\\\"qwerty\\\"}\"}"}
+{"level":"error","message":"{\"route\":\"/account/create\",\"errorMessage\":\"TypeError: Cannot read property 'userName' of undefined\",\"errorCode\":\"/createAccount\",\"function\":\"{}\"}"}

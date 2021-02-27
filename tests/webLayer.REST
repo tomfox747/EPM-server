@@ -1,0 +1,27 @@
+POST http://localhost:8000/account/create HTTP/1.1
+content-type: application/json
+
+{
+    "userName":"tom",
+    "password":"qwerty"
+}
+
+###
+
+POST http://localhost:8000/account/login HTTP/1.1
+content-type: application/json
+
+{
+    "userName":"tomfox747",
+    "password":"qwerty"
+}
+
+###
+
+GET http://localhost:8000/authHealthCheck HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJOYW1lIjoidG9tZm94NzQ3IiwicGFzc3dvcmQiOiJxd2VydHkiLCJlbWFpbCI6IjE3NjYxNDY1QHN0dWRlbnRzLmxpbmNvbG4uYWMudWsiLCJwZXJtaXNzaW9ucyI6WzAsMSwyLDMsNF19LCJpYXQiOjE2MTQ0MzAzMDJ9.L6EJQ8GRyy0uoyUwxs2pI1PrPq3fGbFR5VWRxAieCgY
+###
+
+GET http://localhost:8000/healthCheck/ HTTP/1.1
+content-type: application/json

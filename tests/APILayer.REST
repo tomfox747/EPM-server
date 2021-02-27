@@ -1,0 +1,47 @@
+GET http://localhost:8001/healthCheck/ HTTP/1.1
+Content-Type: application/json
+
+###
+
+GET http://localhost:8001/authHealthCheck HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJOYW1lIjoidG9tZm94NzQ3IiwicGFzc3dvcmQiOiJxd2VydHkiLCJlbWFpbCI6IjE3NjYxNDY1QHN0dWRlbnRzLmxpbmNvbG4uYWMudWsiLCJwZXJtaXNzaW9ucyI6WzAsMSwyLDMsNF19LCJpYXQiOjE2MTQ0MjkyNTh9.Oxe2JbIPrDDEesIEedmDJamkq9V-IcWCwD8ybmhxB9M
+
+###
+
+GET http://localhost:8001/user/ HTTP/1.1
+Content-Type: "application/json"
+
+###
+
+POST http://localhost:8001/account/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "userName":"tomfox747",
+    "password":"qwerty"
+}
+
+###
+
+POST http://localhost:8001/account/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "userData":{
+        "userName":"daz",
+        "password":"1234"
+    }
+}
+
+###
+#this should fail
+POST http://localhost:8001/user/createAccount HTTP/1.1
+Content-Type: application/json
+
+{
+    "userData":{
+        "userName":"tomfox",
+        "password":"qwerty"
+    }
+}

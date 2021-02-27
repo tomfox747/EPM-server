@@ -1,0 +1,9 @@
+- add user router to create new user and authenticate user
+
+- add request limit middleware
+
+- add allowed client requests into env file or something
+
+- setup local dummy data in json
+
+- Add in comments and documentation for how to work on the server
