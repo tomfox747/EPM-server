@@ -1,23 +1,14 @@
-class ReturnError{
-    constructor(type, code, message){
-        this.name = type,
+class CustomError extends Error{
+    constructor(code, type, message){
         this.code = code,
+        this.type = type,
         this.message = message
     }
 }
 
-class DevError{
-    constructor(type, code, message, file, functionName, data){
-        this.name = type,
-        this.code = code,
-        this.message = message,
-        this.file = file,
-        this.functionName = functionName
-        this.data = data
-    }
-}
+const allowedErrors = [400,401,403,500]
 
 module.exports = {
-    ReturnError,
-    DevError
+    CustomError,
+    allowedErrors
 }
