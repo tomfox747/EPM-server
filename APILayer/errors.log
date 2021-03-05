@@ -4,3 +4,5 @@
 {"level":"error","message":"{\"route\":\"/account/login\",\"errorMessage\":\"login Error\",\"errorCode\":\"login route\",\"function\":\"{\\\"userName\\\":\\\"tomfox747\\\",\\\"password\\\":\\\"qwerty\\\"}\"}"}
 {"level":"error","message":"{\"route\":\"/account/login\",\"errorMessage\":\"login Error\",\"errorCode\":\"login route\",\"function\":\"{\\\"userName\\\":\\\"tomfox747\\\",\\\"password\\\":\\\"qwerty\\\"}\"}"}
 {"level":"error","message":"{\"route\":\"/account/login\",\"errorMessage\":\"login Error\",\"errorCode\":\"login route\",\"function\":\"{\\\"userName\\\":\\\"tomfox747\\\",\\\"password\\\":\\\"qwerty\\\"}\"}"}
+{"level":"error","message":"{\"route\":\"/account/login\",\"errorMessage\":\"Error: Invalid username\",\"errorCode\":\"login route\",\"function\":\"{\\\"userName\\\":\\\"tomfox\\\",\\\"password\\\":\\\"qwerty\\\"}\"}"}
+{"level":"error","message":"{\"route\":\"/account/login\",\"errorMessage\":\"Error: Invalid username\",\"errorCode\":\"login route\",\"function\":\"{\\\"userName\\\":\\\"tomfox\\\",\\\"password\\\":\\\"qwerty\\\"}\"}"}

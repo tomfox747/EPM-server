@@ -8,7 +8,7 @@ passport.use(
     new JWTstrategy(
         {
             jwtFromRequest : ExtractJWT.fromAuthHeaderAsBearerToken(),
-            secretOrKey : '12345'
+            secretOrKey : '32jh1tf4h3892054ar8e7htr95nt43iuolh59438yg42'
         },
         async (token,done) =>{
             try{

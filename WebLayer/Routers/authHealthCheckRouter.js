@@ -6,19 +6,18 @@ const {GET,POST} = require('../Services/HttpService')
 
 router.get('/', async (req,res) =>{
     try{
-        const token = req.headers.authorization
+        const token = 'Bearer ' + req.cookies.authToken
+        //const token = req.headers.authorization
         const params = {
             headers:{
                 'Authorization':token
             }
         }
+        console.log(params)
         const response = await GET('http://localhost:8001/authHealthCheck', params)
-        if(response.status !== 200){
-            throw new Error("Unauthorized", 401);
-        }
         res.send(response)
     }catch(e){
-        GenerateErrorLog(req.originalUrl, e.message, e.code, 'route call', req.body)
+        console.log(e)
         if(allowedErrors.includes(e.code)){
             res.status(e.code).send("e.message")
         }

@@ -1,11 +1,22 @@
+<!--
+    This page is just an example of how the login process will work you do not have to use it.
+    The only thing that you'll need to know is that when the 
+    http://localhost:8000/account/login route is called, the response will need to be stored in a cookie.
+    This cookie can then be used to authenticate a call to the home page.
+    All pages apart from the login page will require the authToken cookie to be stored in order to successfully
+    make the request.
+-->
+
 <!DOCTYPE html>
 <html>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <body>
     <div>
         <label>
-            :Email
+            :Username
         </label>
         <input
+            onchange="setUsername(this.value)"
             type="text"
         />
     </div>
@@ -14,14 +25,31 @@
             :Password
         </label>
         <input
+            onchange="setPassword(this.value)"
             type="text"
         />
     </div>
     <button onclick="handleSubmit()">Login</button>
 </body>
 <script>
-    const handleSubmit = () =>{
-        window.location="http://localhost:8000/page/home"
+
+    let userName = "";
+    let password = "";
+
+    const setUsername = (value) =>{
+        userName = value
     }
+    const setPassword = (value) =>{
+        password = value
+    }
+
+    const handleSubmit = () =>{
+        axios.post('http://localhost:8000/account/login',{userName:userName,password:password})
+        .then((res) =>{
+            document.cookie = `authToken=${res.data.data.token}; secure:true; httponly:true`    
+            window.location = "http://localhost:8000/page/home" 
+        })
+    }
+
 </script>
 </html>

@@ -1,9 +1,0 @@
-The server project is a multi tier api.
-
-This means that there are 2 servers running as part of the project
-
-The client application will only call the end points which are specified in the web layer.
-By only exposing these end points the database call end points are protected.
-This makes them impossible to access externally
-
-This protects the database as an attacker cannot see the end point calls which access the database

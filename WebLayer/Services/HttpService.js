@@ -3,7 +3,7 @@ const axios = require('axios')
 //Configured to make a HTTP Get request to the server
 const GET = async (url,params) =>{
     try{
-        await axios.get(url,params)
+        return await axios.get(url,params)
         .then((res) =>{
             return res.data
         })
@@ -11,6 +11,7 @@ const GET = async (url,params) =>{
             throw new Error(err)
         })
     }catch(e){
+        console.log(e)
         throw new Error(e)
     }
 }

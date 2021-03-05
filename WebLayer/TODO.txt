@@ -2,8 +2,6 @@
 
 - Middleware to perform input validation
 
-- Rework error handling
-
 - Rework Logging maybe
 
 - Add in comments and documentation for how to work on the server

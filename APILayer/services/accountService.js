@@ -29,7 +29,7 @@ const login = async(userName, password) =>{
             throw new Error("invalid passowrd")
         }
 
-        const token = jwt.sign({user},'12345')
+        const token = jwt.sign({user},'32jh1tf4h3892054ar8e7htr95nt43iuolh59438yg42')
         return {
             user:user,
             token:token
