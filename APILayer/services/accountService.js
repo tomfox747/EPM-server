@@ -1,9 +1,9 @@
-const {ReturnError, DevError} = require('../utils/Errorhandler')
 const passport = require('passport')
 const jwt = require('jsonwebtoken')
 
 const dummyUsers = require('../../DummyData/users.json').users
 
+//If the user already exists, don't create the account. Otherwise create the account
 const createAccount = async (userData) =>{
     try{
         const user = dummyUsers.find(element => element.userName === userData.userName)
@@ -18,6 +18,7 @@ const createAccount = async (userData) =>{
     }
 }
 
+//If Dummy users contains an entry of the passed user data. A token is created and send back to the user
 const login = async(userName, password) =>{
     try{
         const user = dummyUsers.find(element => element.userName === userName)
@@ -34,7 +35,7 @@ const login = async(userName, password) =>{
             token:token
         }
     }catch(e){
-        throw new Error('login Error')
+        throw new Error(e)
     }
 }
 

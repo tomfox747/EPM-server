@@ -64,7 +64,7 @@ const GenerateErrorLog = (route, errorMessage, functionName, data) =>{
     });
 }
 const GenerateEventLog = (route, functionName, message, data) =>{
-    if(!route || !message|| !functionName){
+    if(!route || !message || !functionName){
         return new Error("Could not create event log")
     }
     dataString = JSON.stringify(data)

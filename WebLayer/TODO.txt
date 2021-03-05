@@ -1,12 +1,9 @@
 - add request limit middleware
 
-- Rework error handling
-the error handling does not always describe the issue to the user / developer
-errors are too generic and need more specificity
-Dev errors to include --> filename, function/route, error message, error code, line, data
-Return errors to include --> 
-come up with a set of allowed codes / error types which can be returned. If the error does not fit within these codes, return 500
+- Middleware to perform input validation
 
-- Rework Logging to be more useful
+- Rework error handling
+
+- Rework Logging maybe
 
 - Add in comments and documentation for how to work on the server

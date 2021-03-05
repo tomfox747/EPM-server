@@ -11,7 +11,7 @@ router.post('/login', async (req, res) => {
         res.send(response)
     }catch(e){
         GenerateErrorLog(req.originalUrl, e.message, 'login route', req.body)
-        res.status(500).send('Error logging into account')
+        res.status(500)
     }
 });
 
@@ -23,7 +23,7 @@ router.post('/create', async (req,res) =>{
         res.send("account creation was successful")
     }catch(e){
         GenerateErrorLog(req.originalUrl,e.message,'/createAccount',req.body)
-        res.status(500).send("error creating the account")
+        res.status(500)
     }
 })
 

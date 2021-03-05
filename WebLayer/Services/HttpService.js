@@ -1,5 +1,6 @@
 const axios = require('axios')
 
+//Configured to make a HTTP Get request to the server
 const GET = async (url,params) =>{
     try{
         await axios.get(url,params)
@@ -10,11 +11,11 @@ const GET = async (url,params) =>{
             throw new Error(err)
         })
     }catch(e){
-        console.log(e)
-        throw new Error("http request error")
+        throw new Error(e)
     }
 }
 
+//Congigured to make a HTTP Post request to the inner server
 const POST = ( async (url,params,body) =>{
     let responseObject = {
         statusCode:null,
@@ -26,7 +27,7 @@ const POST = ( async (url,params,body) =>{
         responseObject.data = res.data 
     })
     .catch(e =>{
-        throw new Error('request error')
+        throw new Error(e)
     })
 
     return responseObject

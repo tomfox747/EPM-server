@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router();
 const accountService = require('../Services/accountService')
+const {allowedErrors} = require('../Utils/ErrorHandlers')
 const {GenerateErrorLog,GenerateRouteLog,GenerateEventLog} = require('../logging/loggerDefinition')
 
 router.post('/create', async (req,res) =>{
@@ -10,7 +11,11 @@ router.post('/create', async (req,res) =>{
         let response = await accountService.createAccount(userData)
         res.send(response)
     }catch(e){
-        res.send(new Error("Account Creation Error", 500, "Error occured creating your account"))
+        GenerateErrorLog(req.originalUrl, e.message, e.code, 'route call', req.body)
+        if(allowedErrors.includes(e.code)){
+            throw new CustomError(e.code, e.type, e.message)
+        }
+        res.send(new Error("Account Creation Error", 500, "Error occured creating your account"))   
     }
 })
 
@@ -23,7 +28,10 @@ router.post('/login', async (req,res) =>{
         res.send(response)
     }catch(e){
         GenerateErrorLog(req.originalUrl,e.message,e.code,'route call',req.body)
-        res.status(500).send(new Error("Login Error", 500, "Error occured whilst logging into your account"))
+        if(allowedErrors.includes(e.code)){
+            throw new CustomError(e.code, e.type, e.message)
+        }
+        res.send(new Error("Login Error", 500, "Error occured whilst loggin into your account"))   
     }
 })
 

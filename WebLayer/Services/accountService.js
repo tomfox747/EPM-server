@@ -1,15 +1,9 @@
 const {GET,POST} = require('./HttpService')
 const {CustomError, allowedErrors}= require('../Utils/ErrorHandlers')
-
+const {GenerateErrorLog} = require('../logging/loggerDefinition')
 
 const createAccount = async (userData) =>{
-    //call end point from the api server
     try{
-        let errorTest = new Error()
-        errorTest.status = 400
-        errorTest.message = 'bad request'
-        throw new Error(errorTest)
-
         if(!userData.userName){
             throw new CustomError(400,"Bad request", "No username was supplied")
         }
@@ -20,10 +14,7 @@ const createAccount = async (userData) =>{
         let response = await POST('http://localhost:8001/account/create',null,userData)
         return response
     }catch(e){
-        if (allowedErrors.includes(e.code)){
-            throw new CustomError(e.code, e.type, e.message)
-        }
-        throw new CustomError(500,'internal server error','An unknown error occured')
+        throw new Error(e)
     }
 }
 
@@ -43,10 +34,7 @@ const login = async (userName, password) =>{
         let response = await POST('http://localhost:8001/account/login',null,userData)
         return response
     }catch(e){
-        if(allowedErrors.includes(e.code)){
-            throw new CustomError(e.code, e.type, e.message)
-        }
-        throw new CustomError(500,'internal server error','an unknown error occured')
+        throw new Error(e)
     }
 }
 
